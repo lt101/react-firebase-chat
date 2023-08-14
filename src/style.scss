@@ -3,8 +3,14 @@ body {
     font-family: 'Vazir', sans-serif;
 }
 
+$neutral-color: #38084e;
+$dark-color:#260635;
+$light-color: #624c6d;
+$accent-color: #402E32;
+
+
 .formContainer{
-    background-color: #a7bcff;
+    background-color: $neutral-color;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -38,16 +44,16 @@ body {
             input{
                 padding: 15px;
                 border:none;
-                border-bottom: 1px solid #a7bcff;
+                border-bottom: 1px solid $dark-color;
             &::placeholder{
                 color: rgb(175, 175, 175)
             }
             }
 
             button{
-                background-color: bisque;
+                background-color: $light-color;
                 border-radius: 10px;
-                color: black;
+                color: white;
                 padding: 10px;
                 font-weight: bold;
                 border: none;
@@ -76,14 +82,14 @@ body {
 }
 
 .home{
-    background-color: #a7bcff;
+    background-image: linear-gradient(to left, #f8f6f9, #bfb4c4, #897692, #563c62, #260635);
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .container{
-        border: 1px solid white;
+        border: 1px solid black;
         border-radius: 10px;
         width: 70%;
         height: 80%;
@@ -92,12 +98,13 @@ body {
 
         .sidebar{
             flex: 1;
-            background-color: #2d4aaa;
+            background-color: $dark-color;
+            border-right: 1px solid $light-color;
 
             .navbar{
                 display: flex;
                 align-items: center;
-                background-color: #132b77;
+                background-color: $dark-color;
                 height: 50px;
                 padding: 10px;
                 justify-content: space-between;
@@ -120,10 +127,19 @@ body {
                     object-fit: cover;
                 }
 
+                button{
+                    cursor: pointer;
+                }
+
                 
             }
             .search{
-                border-bottom: 1px solid gray;
+                background-color: $neutral-color;
+                color: white;
+                border-radius: 30px;
+                &:hover{
+                    background-color: $light-color;
+                }
 
                 .searchForm{
                     padding: 10px;
@@ -131,11 +147,11 @@ body {
                     input{
                         background-color: transparent;
                         border: none;
-                        color: white;
+                        color: black;
                         outline: none;
 
                         &::placeholder{
-                            color: lightgrey;
+                            color: white;
                         }
                     }
                 }
@@ -150,7 +166,8 @@ body {
                 cursor: pointer;
 
                 &:hover{
-                    background-color: #132b77;
+                    background-color: $light-color;
+                    color: white;
                 }
 
                 img{
@@ -168,7 +185,8 @@ body {
 
                     p{
                         font-size: 14px;
-                        color: lightgray;
+                        color: white;
+                        opacity: 50%;
                     }
                 }
             }
@@ -179,7 +197,7 @@ body {
 
             .chatInfo{
                 height: 50px;
-                background-color: #5d5b8d;
+                background-color: $dark-color;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -188,7 +206,7 @@ body {
             }
 
             .messages{
-                background-color: #ddddf7;
+                background-color: $dark-color;
                 padding: 10px;
                 height: calc(100% - 160px);
                 overflow-y: scroll;
